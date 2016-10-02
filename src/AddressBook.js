@@ -3,13 +3,13 @@ function AddressBook(){
     this.initialComplete = false;
 }
 
-AddressBook.prototype.getInitialContacts = function(cb){
+AddressBook.prototype.getInitialContacts = function(){
     var self = this;
 
-    setTimeout(function(){
+    setTimeout(function(cb){
         self.initialComplete = true;
         if (cb){
-            return cb;
+            cb();
         }
     }, 2);
 }
